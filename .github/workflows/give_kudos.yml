@@ -2,7 +2,7 @@ name: Give Strava Kudos
 
 on:
   schedule:
-    - cron: "30 5-23/6 * * *"
+    - cron: "10 5-23/6 * * *"
   workflow_dispatch:
 
 env:
@@ -10,7 +10,7 @@ env:
   STRAVA_PASSWORD: ${{ secrets.STRAVA_PASSWORD }}
 jobs:
   run-kudos-cron:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3 

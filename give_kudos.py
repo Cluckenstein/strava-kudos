@@ -24,7 +24,8 @@ class KudosGiver:
         self.web_feed_entry_pattern = '[data-testid=web-feed-entry]'
 
         p = sync_playwright().start()
-        self.browser = p.firefox.launch() # does not work in chrome
+        #self.browser = p.firefox.launch() # does not work in chrome
+        self.browser = p.chromium.launch(headless=False)
         self.page = self.browser.new_page()
 
 

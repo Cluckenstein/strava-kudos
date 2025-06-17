@@ -20,5 +20,6 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: playwright install
+      - run: sudo playwright install-deps
       - run: python give_kudos.py
         

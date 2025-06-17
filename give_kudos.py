@@ -176,11 +176,18 @@ class KudosGiver:
         self.locate_kudos_buttons_and_maybe_give_kudos(web_feed_entry_locator=web_feed_entry_locator)
         self.browser.close()
 
+    def close(self):
+        self.browser.close()
+        self.playwright.stop()
+
 
 def main():
     kg = KudosGiver()
-    kg.email_login()
-    kg.give_kudos()
+    try:
+        kg.email_login()
+        kg.give_kudos()
+    finally:
+        kg.close()
 
 
 if __name__ == "__main__":
